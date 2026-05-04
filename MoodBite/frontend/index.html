@@ -1,60 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>MoodBite</title>
+    <meta charset="UTF-8">
+    <title>MoodBite Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="login-body">
 
-    <nav>
-        <h2>MoodBite</h2>
-        <div>
-            <a href="orders.html">View Orders</a>
-            <a href="login.html">Logout</a>
-        </div>
-    </nav>
+    <div class="login-box">
+        <h1>MoodBite</h1>
+        <p>Food that matches your mood</p>
 
-    <section class="hero">
-        <h1>Order food based on your mood</h1>
-        <p>Mood-based food ordering with Veg, Non-Veg, Idli, Dosa and smart search.</p>
+        <input type="text" id="username" placeholder="Enter your name">
+        <input type="password" id="password" placeholder="Enter password">
 
-        <div class="mood-buttons">
-            <button onclick="showFood('Happy')">😊 Happy</button>
-            <button onclick="showFood('Tired')">😴 Tired</button>
-            <button onclick="showFood('Spicy')">🔥 Spicy</button>
-            <button onclick="showFood('Healthy')">🥗 Healthy</button>
-            <button onclick="showFood('SouthIndian')">🍽 Idli & Dosa</button>
-            <button onclick="showFood('NonVeg')">🍗 Non-Veg</button>
-        </div>
-    </section>
+        <button onclick="login()">Login</button>
+    </div>
 
-    <section class="controls">
-        <input type="text" id="searchInput" placeholder="Search food..." onkeyup="filterFoods()">
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
 
-        <select id="typeFilter" onchange="filterFoods()">
-            <option value="All">All</option>
-            <option value="Veg">Veg</option>
-            <option value="Non-Veg">Non-Veg</option>
-            <option value="Healthy">Healthy</option>
-            <option value="Drink">Drink</option>
-        </select>
-    </section>
+            if (username === "" || password === "") {
+                alert("Please enter username and password");
+                return;
+            }
 
-    <section>
-        <h2 class="title">Recommended Menu</h2>
-        <div id="menu" class="menu"></div>
-    </section>
+            // Save user
+            localStorage.setItem("user", username);
 
-    <section class="cart">
-        <h2>Your Cart</h2>
-        <ul id="cartList"></ul>
-        <h3>Total: ₹<span id="total">0</span></h3>
-        <button onclick="placeOrder()">Place Order</button>
-    </section>
+            // Redirect to home page
+            window.location.href = "home.html";
+        }
+    </script>
 
-    <script src="script.js"></script>
 </body>
 
 </html>

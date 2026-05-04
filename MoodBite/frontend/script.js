@@ -112,7 +112,7 @@ async function login() {
         if (response.ok) {
             localStorage.setItem("customerName", data.user);
             alert("Login successful");
-            window.location.href = "index.html";
+            window.location.href = "home.html";
         } else {
             alert(data.message);
         }
