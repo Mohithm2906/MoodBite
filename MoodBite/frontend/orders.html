@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MoodBite Orders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>MoodBite Admin</h2>
+        <a href="index.html">Back to Home</a>
+    </nav>
+
+    <section class="orders-page">
+        <h1>Live Orders Dashboard</h1>
+        <p>This page fetches orders from backend API.</p>
+
+        <div id="ordersContainer" class="orders-container"></div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        loadOrders();
+    </script>
+
+</body>
+
+</html>

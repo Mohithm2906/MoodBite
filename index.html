@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MoodBite Food Ordering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>MoodBite</h2>
+        <a href="login.html">Logout</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Order food based on your mood</h1>
+        <p>Choose your mood and get perfect food recommendations.</p>
+
+        <div class="mood-buttons">
+            <button onclick="showFood('happy')">😊 Happy</button>
+            <button onclick="showFood('tired')">😴 Tired</button>
+            <button onclick="showFood('spicy')">🔥 Spicy</button>
+            <button onclick="showFood('healthy')">🥗 Healthy</button>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Recommended Foods</h2>
+        <div id="menu" class="menu"></div>
+    </section>
+
+    <section class="cart-section">
+        <h2>Your Cart</h2>
+        <ul id="cartList"></ul>
+        <h3>Total: ₹<span id="total">0</span></h3>
+        <button onclick="placeOrder()">Place Order</button>
+    </section>
+
+    <footer>
+        <p>© 2026 MoodBite | Unique Online Food Ordering System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
